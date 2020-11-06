@@ -1,3 +1,12 @@
+spawn(function()
+    while true do
+        game:GetService("RunService").Heartbeat:Wait();
+        settings().Physics.AllowSleep = false;
+        game:GetService("Players").LocalPlayer.MaximumSimulationRadius = math.huge;
+        setsimulationradius(math.huge);
+    end
+end)
+
 local Players = game:GetService'Players'
 local LP = Players.LocalPlayer or Players.PlayerAdded:Wait()
 local Char = LP.Character or LP.CharacterAdded:Wait()
