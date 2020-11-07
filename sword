@@ -11,6 +11,7 @@ local Players = game:GetService'Players'
 local LP = Players.LocalPlayer or Players.PlayerAdded:Wait()
 local Char = LP.Character or LP.CharacterAdded:Wait()
 local Hat = Char:WaitForChild'BladeMasterAccessory'
+local Tool = LP.Character:FindFirstChildWhichIsA("Tool")
 
 local function Allign(Part0,Part1,Position,Angle)
     if Part0:FindFirstChild'AccessoryWeld' then Part0.AccessoryWeld:Destroy() end --Part0.SpecialMesh:Destroy() end
@@ -39,3 +40,8 @@ local function Allign(Part0,Part1,Position,Angle)
 end
 
 Allign(Hat.Handle,Char['Right Arm'],Vector3.new(0,-1,-2.5),Vector3.new(0,-90,-42))
+
+Tool.Handle.Massless = true
+Tool.Grip = CFrame.new(9999,9999,9999)
+Tool.Parent = plr.Backpack
+Tool.Parent = plr.Character
