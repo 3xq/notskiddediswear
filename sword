@@ -42,6 +42,6 @@ end
 Allign(Hat.Handle,Char['Right Arm'],Vector3.new(0,-1,-2.5),Vector3.new(0,-90,-42))
 
 Tool.Handle.Massless = true
-Tool.Grip = CFrame.new(9999,9999,9999)
+Tool.Grip = CFrame.new(0,10,0)
 Tool.Parent = plr.Backpack
 Tool.Parent = plr.Character
