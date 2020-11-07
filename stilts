@@ -47,11 +47,21 @@ end
 
 LP.Character.Humanoid.HipHeight = 3.9
 
-Allign(Hat.Handle,Char['Left Leg'],Vector3.new(0,-2,0),Vector3.new(90,0,0))
-Allign(Hat2.Handle,Char['Right Leg'],Vector3.new(0,-2,0),Vector3.new(90,0,0))
+Allign(Hat.Handle,Char['Left Leg'],Vector3.new(0,0,0),Vector3.new(90,0,0))
+Allign(Hat2.Handle,Char['Right Leg'],Vector3.new(0,0,0),Vector3.new(90,0,0))
 
-Allign(Hat3.Handle,Char['Left Leg'],Vector3.new(0,-3.9,0),Vector3.new(90,0,0))
-Allign(Hat4.Handle,Char['Right Leg'],Vector3.new(0,-3.9,0),Vector3.new(90,0,0))
+Allign(Hat3.Handle,Char['Left Leg'],Vector3.new(0,-1.9,0),Vector3.new(90,0,0))
+Allign(Hat4.Handle,Char['Right Leg'],Vector3.new(0,-1.9,0),Vector3.new(90,0,0))
 
-Allign(Hat5.Handle,Char['Left Leg'],Vector3.new(0,-5.9,0),Vector3.new(90,0,0))
-Allign(Hat6.Handle,Char['Right Leg'],Vector3.new(0,-5.9,0),Vector3.new(90,0,0))
+Allign(Hat5.Handle,Char['Left Leg'],Vector3.new(0,-3.9,0),Vector3.new(90,0,0))
+Allign(Hat6.Handle,Char['Right Leg'],Vector3.new(0,-3.9,0),Vector3.new(90,0,0))
+
+for _,v in pairs(Char:GetChildren()) do
+	if v:IsA("Accessory") and v.Name ~= 'NinjaMaskOfShadows' then
+		for _,x in pairs(v:GetDescendants()) do
+			if x.Name == "Mesh" or x.Name == "SpecialMesh" then
+				x:Destroy()
+			end
+		end
+	end
+end
